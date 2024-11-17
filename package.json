@@ -1,0 +1,43 @@
+{
+  "name": "ingress-example-jerome",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "9.14.0",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.9.0",
+    "@types/supertest": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^8.14.0",
+    "@typescript-eslint/parser": "^8.14.0",
+    "eslint": "9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.12.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.14.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "bullmq": "^5.29.1",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "pg": "^8.13.1",
+    "typeorm": "^0.3.20"
+  },
+  "scripts": {
+    "serve": "nodemon src/server.ts",
+    "test": "jest",
+    "lint": "eslint src --fix",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm -d ./src/config/datasource.ts"
+  }
+}

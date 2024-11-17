@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+    volumes: 
+      - dbdata:/var/lib/postgresql/data/
+    env_file: env/development.env
+  redis:
+    image: redis:alpine
+    ports:
+      - "${REDIS_PORT}:${REDIS_PORT}"
+    env_file: env/development.env
+    network_mode: host # Host access allows workers to download a file on my local machine network for testing
+volumes:
+  dbdata:

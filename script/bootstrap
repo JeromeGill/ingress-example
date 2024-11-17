@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Get the directory of the current script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# We wouldn't do this in a real project
+cp -f env/development.env .env
+
+# @todo handle different environments
+docker compose --env-file ./env/development.env up -d 
